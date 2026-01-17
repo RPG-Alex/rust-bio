@@ -38,7 +38,7 @@ jobs:
           override: true
           components: clippy
 
-      - use: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@v2
 
 
       - name: Lint with clippy
@@ -76,7 +76,7 @@ jobs:
           toolchain: ${{ matrix.rust }}
           override: true
 
-      - use: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@v2
 
       - name: Run tests
         uses: actions-rs/cargo@v1
@@ -99,7 +99,7 @@ jobs:
           toolchain: ${{ env.MSRV_VERSION }}
           override: true
 
-      - use: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@v2
 
       - name: check if README matches MSRV defined here
         run: grep $MSRV_VERSION README.md
